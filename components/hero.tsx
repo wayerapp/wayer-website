@@ -78,6 +78,7 @@ export function Hero() {
                     fill
                     className="object-cover object-top"
                     priority
+                    loading="eager"
                   />
                 </div>
               </div>

@@ -1,15 +1,21 @@
 "use client"
 
-import { Mail } from "lucide-react"
+import Link from "next/link"
+import { Mail, Shield, FileText } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function Footer() {
   const { t } = useLanguage()
 
-  const links = [
+  const navLinks = [
     { label: t("Comment ca marche", "How it works"), href: "#how-it-works" },
     { label: t("L'app", "The app"), href: "#app" },
     { label: "FAQ", href: "#faq" },
+  ]
+
+  const legalLinks = [
+    { label: t("Politique de confidentialite", "Privacy Policy"), href: "/confidentialite", icon: Shield },
+    { label: t("Conditions d'utilisation", "Terms of Use"), href: "/cgu", icon: FileText },
   ]
 
   return (
@@ -24,9 +30,9 @@ export function Footer() {
             <p className="text-white/60 mt-2">{t("Ton guide de voyage intelligent", "Your intelligent travel guide")}</p>
           </div>
 
-          {/* Links */}
+          {/* Nav Links */}
           <nav className="flex flex-wrap justify-center gap-6">
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -34,6 +40,20 @@ export function Footer() {
               >
                 {link.label}
               </a>
+            ))}
+          </nav>
+
+          {/* Legal Links */}
+          <nav className="flex flex-wrap justify-center gap-6">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="flex items-center gap-2 text-white/70 hover:text-coral transition-colors"
+              >
+                <link.icon className="w-4 h-4" />
+                {link.label}
+              </Link>
             ))}
           </nav>
 
