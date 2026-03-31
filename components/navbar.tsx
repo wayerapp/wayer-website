@@ -58,9 +58,11 @@ export function Navbar() {
             >
               {lang}
             </button>
-            <Button className="bg-coral hover:bg-coral/90 text-white font-semibold px-6">
-              {t("Telecharger", "Download")}
-            </Button>
+            <a href="https://app.wayer.fr">
+              <Button className="bg-coral hover:bg-coral/90 text-white font-semibold px-6">
+                {t("Lancer l'app", "Open app")}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,9 +96,11 @@ export function Navbar() {
                 >
                   {lang}
                 </button>
-                <Button className="bg-coral hover:bg-coral/90 text-white font-semibold flex-1">
-                  {t("Telecharger", "Download")}
-                </Button>
+                <a href="https://app.wayer.fr" className="flex-1">
+                  <Button className="bg-coral hover:bg-coral/90 text-white font-semibold w-full">
+                    {t("Lancer l'app", "Open app")}
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

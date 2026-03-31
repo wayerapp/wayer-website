@@ -1,6 +1,6 @@
 "use client"
 
-import { Apple, Play } from "lucide-react"
+import { Apple, Play, Globe } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 
@@ -25,6 +25,15 @@ export function Hero() {
                 )}
               </p>
             </div>
+
+            {/* CTA - Lancer l'app web */}
+            <a
+              href="https://app.wayer.fr"
+              className="inline-flex items-center gap-3 bg-coral hover:bg-coral/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors shadow-lg shadow-coral/25"
+            >
+              <Globe className="w-6 h-6" />
+              {t("Lancer l'app gratuitement", "Open the app for free")}
+            </a>
 
             {/* Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -55,14 +64,6 @@ export function Hero() {
                 </span>
               </button>
             </div>
-
-            {/* Waitlist Link */}
-            <a
-              href="#waitlist"
-              className="inline-flex items-center gap-2 text-coral hover:text-coral/80 font-semibold text-lg transition-colors"
-            >
-              {t("Rejoins la waitlist", "Join the waitlist")}
-            </a>
           </div>
 
           {/* Right Content - iPhone Mockup */}
